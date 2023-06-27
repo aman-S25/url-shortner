@@ -1,9 +1,11 @@
 
 # URL SHORTENER
 
-This is a simple url shortening app made using node.js, express.js and mongoDB as database. It uses "nano id" for generating short urls and "MongoClient" class for making connections to MongoDB.
+&nbsp;
+# Description
+This is a simple url shortening app made using node.js, express.js and mongoDB as database. It uses "nano id" for generating short urls and "MongoClient" class for making connections to MongoDB Instance. These are the dependencies that have been used in this project: "body-parser" (to process data sent in an HTTP request body), "dotenv" ( to create environment variables in a . env file), "express", "mongod", "mongodb", "mongoose", "mongosh", "nanoid".
 
-
+&nbsp;
 # Prerequisites
 
 You need to have Node.js, npm, Express.js, MongoDB installed on your computer.
@@ -42,11 +44,9 @@ Now, you are ready to run this app. Use commnad in the terminal:
   npm run start
 ```
 
-
-&nbsp;
 &nbsp;
 
-## Brief Guide (Summary of Above)
+## Brief Guide (For Using)
 
 Clone the project
 
@@ -77,3 +77,38 @@ Start the server
 ```bash
   npm run start
 ```
+
+Navigate to http://localhost:5000
+
+&nbsp;
+
+# Internal Working
+# Here are the steps that this URL Shortening app take to give results: 
+
+The first thing we need to do is access the JSON data that was sent from the client in the request body. To do this, we need to use of the body-parser package.
+
+Before we shorten the URL, we validate if the URL that was submitted is valid or not. Client side validation is handled for us in the browser because we’ve set the type of the input to url so the form won’t be submitted if the value doesn’t have a valid URL structure.
+To make the application more robust, we validate the URL on the server as well using node module "DNS".
+
+Then we set up environment variables with .env file. we use dotenv module to confiq data from .env file.
+
+To store data, we use MongoDB database. We use MongoClient to connect with MongoDB instance. If the connection is successful, we get a reference to the MongoDB instance client and can select a database using the client.db() method. Note that this method creates the database if it does not already exist.
+
+Here, we are select a reference to the shortener database and storing that reference in app.locals which is an object provided by express. This object allows us to set local variables that persist throughout the life of the application, and can be accessed in other middleware functions (functions that have access to the req or res objects) via req.app.locals.
+
+In the next step is to actually shorten the URL and store it in the database. To create a unique short id for each url, we use the nanoid package.
+
+Before we add any data into the database, We need to reference a collection. We do so using the using the db.collection() method. If the collection does not exist yet, it’s created.
+
+Before we shorten the URL and add it to the database, we need to check if the URL has not been shortened already to prevent duplicate database entries for one URL. We do it using the findOneAndUpdate() method on the collection which allows us to modify a document that already exists in the database collection or create it if it doesn’t exist.
+
+We also use $setOnInsert operator allows us to set the value of the document only if its being inserted. This means that the document will not be modified if it already exists, but if it doesn’t, it will be created with its value set to whatever we set in $setOnInsert.
+
+Hence, the document will have two properties: original_url which is the url to be shortened, and short_id which is a unique 7 character id for that url.
+
+Finally, setting returnOriginal to false ensures that findOneAndUpdate returns the new document if one is upserted, which is what we want in this case.
+
+
+
+# Takeaways:
+Very UseFul project for learning all node.js, express.js and MongoDB.

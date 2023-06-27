@@ -26,6 +26,7 @@ html {
   --blue: #46ACCA;
   --brown: #D49667;
   --red: #980100;
+  /* --black: #000000 */
 }
 
 
@@ -46,6 +47,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* color: bl; */
 }
 
 .form-section {
@@ -84,6 +86,7 @@ body {
   border: 1px solid var(--red);
   background-color: var(--red);
   color: white;
+  /* color: #46ACCA; */
   box-shadow: 0 1px 1px rgba(0,0,0,.04);
   border-radius: 5px;
   text-transform: uppercase;
