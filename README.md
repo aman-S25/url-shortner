@@ -8,7 +8,7 @@ This is a simple url shortening app made using node.js, express.js and mongoDB a
 
 You need to have Node.js, npm, Express.js, MongoDB installed on your computer.
 
-
+&nbsp;
 
 # Getting started
 
@@ -40,7 +40,7 @@ Now, make .env file in the root directory of project and add following code to i
 Now, you are ready to run this app. Use commnad in the terminal: npm start
 
 
-&nbsp;
+&nbsp; &nbsp;
 
 ## Brief Guide (Summary of Above)
 
