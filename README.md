@@ -39,7 +39,7 @@ Now, make .env file in the root directory of project and add following code to i
 
 Now, you are ready to run this app. Use commnad in the terminal:
 ```bash
-  npm start
+  npm run start
 ```
 
 
