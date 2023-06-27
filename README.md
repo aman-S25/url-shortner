@@ -1,7 +1,7 @@
 
 # URL SHORTENER
 
-This is a simple url shortening app made using node.js, express.js and mongoDB as database. It uses (nano id)[https://www.npmjs.com/package/nanoid] for generating short urls and "MongoClient" class for making connections to MongoDB.
+This is a simple url shortening app made using node.js, express.js and mongoDB as database. It uses "nano id" for generating short urls and "MongoClient" class for making connections to MongoDB.
 
 
 # Prerequisites
@@ -38,7 +38,11 @@ Now, make .env file in the root directory of project and add following code to i
 ```
 
 Now, you are ready to run this app. Use commnad in the terminal: npm start
-## Run Locally (Brief Guide)
+
+
+&nbsp;
+
+## Brief Guide (Summary of Above)
 
 Clone the project
 
