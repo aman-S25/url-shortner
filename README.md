@@ -37,10 +37,14 @@ Now, make .env file in the root directory of project and add following code to i
   DATABASE=mongodb://localhost:27017
 ```
 
-Now, you are ready to run this app. Use commnad in the terminal: npm start
+Now, you are ready to run this app. Use commnad in the terminal:
+```bash
+  npm start
+```
 
 
-&nbsp; &nbsp;
+&nbsp;
+&nbsp;
 
 ## Brief Guide (Summary of Above)
 
