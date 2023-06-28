@@ -34,9 +34,9 @@ You must be having folder named Node Modules . If not use below commnad:
   npm install
 ```
 
-Now, make .env file in the root directory of project and add following code to it: 
+Now, To connect with database, you can do it using MongoDB either with local port or making MongoDB Atlas instance. For this make .env file in the root directory of project and add variable name "DATABASE" and assign MongoDB connection string either local (mongodb://localhost:27017) or Atlas Connection string.
 ```bash
-  DATABASE=mongodb://localhost:27017
+  DATABASE="Paste your MongoDB connection string here"
 ```
 
 Now, you are ready to run this app. Use commnad in the terminal:
@@ -64,6 +64,7 @@ Make .env file in the root directory of project and add following code to it:
 ```bash
   DATABASE=mongodb://localhost:27017
 ```
+Or You can also use your Atlas connection string;
 
 
 Install dependencies
@@ -111,4 +112,4 @@ Finally, setting returnOriginal to false ensures that findOneAndUpdate returns t
 
 
 # Takeaways:
-Very UseFul project for learning all node.js, express.js and MongoDB.
+Very UseFul project for learning all node.js, express.js and MongoDB. Good one for refreshing some frontend concepts also.
